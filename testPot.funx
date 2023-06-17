@@ -1,0 +1,10 @@
+## codi de test del funcionament de les potències, només definides per exponent
+# positiu, per tant, en aquest cas, la condició del primer if és certa, entra al
+# bloc de codi i a l'avaluar una potència amb exponent negatiu retorna:
+# ERROR: Negative powers are not defined
+
+x <- 3
+if (x^2 = 9) {
+  y <- -2
+  x^y
+}

@@ -1,0 +1,9 @@
+# codi de test dels operadors lògics and or i not i de True i False. El programa
+# no té sentit, simplement és per veure que tot funciona com cal i que retorna 1.
+
+x <- 3
+if(x > 0 and not 2 < 2 and 3>=-3 and x=x) {
+    if (True and True and not (False and False)) {
+        True and (False or True)
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="">
+  <meta charset="utf-8">
+  <body style="background-color:#9C9C9C;">
+    <div style="display:block; width:100%;">
+      <div style="width:50%; float: left; display: inline-block;">
+          <div style="height: 50%; width: 100%">
+              <form action = "http://localhost:5000/result" method = "POST">
+                <header><h1>Console</h1></header>
+                <p><textarea name = "input"></textarea></p>
+                <p><input type = "submit" value = "Submit"/></p>
+              </form>
+          </div>
+          <div style="height: 50%; width: 100%">
+              <header><h1>Functions</h1></header>
+              <div style="position: static" class="body">
+                  {% for name, params in functions.items() %}
+                  <p> {{ name+" "+params["Params"]|join(" ")}} </p>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+
+      <div style="width:50%; float: left; display: inline-block;">
+          <header><h1> Results </h1></header>
+          <div style="position: static" class="body">
+              {% for i in range(output|count) %}
+                {% if i%2 == 0 %}
+                    <p> In {{i//2+1}}: {{output[i]}} </p>
+                {% else %}
+                    <p> Out {{i//2+1}}: {{output[i]}} </p>
+                {% endif %}
+              {% endfor %}
+          </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    textarea {
+      width: 100%;
+      height: 150px;
+      background-color: #FFFFFF;
+      font-size: 16px;
+      font-family:Helvetica;
+      color: #000000;
+      padding: 10px
+    }
+    p{
+      font-family: Helvetica;
+      font-size: 18px;
+      color:#000000;
+      margin: 4%
+    }
+    h1{
+      font-family: Helvetica;
+      font-size: 30px;
+      font-weight: heavy;
+      color:#000000;
+      margin: 4%
+    }
+    input {
+      width: 100%;
+      background-color: #A98307;
+      color: #000000;
+      font-family: Helvetica;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px
+    }
+  </style>
+</html>
